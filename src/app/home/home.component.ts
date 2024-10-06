@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [LoginComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   banner: any = true;
-  hola: string = 'hola'
+
+  btnLogin?: boolean;
+
 }
 

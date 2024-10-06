@@ -1,17 +1,20 @@
 
-import { Component } from '@angular/core';
+import { Component, inject, Input, input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent {
   // Definir los valores para los campos de login
   username: string = 'admin';
   password: string = 'admin';
+
+  @Input() btnLogin?: boolean;
 
   // Crear el FormGroup para login
   formGroupLogin: FormGroup = new FormGroup({
@@ -34,5 +37,3 @@ export class LoginComponent {
   }
   
 }
-
-
