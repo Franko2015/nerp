@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SettingsService } from '../../../services/modulos/administracion/settings/settings.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +11,20 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
+
+  private settingsService = inject(SettingsService);
+  settings: any;
+
   email: string = 'usuario@correo.com';
   telefono: string = '+1234567890';
 
   currentPassword: string = '';
   newPassword: string = '';
   confirmPassword: string = '';
+
+  constructor(){
+    this.getSettings();
+  }
 
   formGroup: FormGroup = new FormGroup({
     email: new FormControl(this.email, [
@@ -50,5 +59,11 @@ export class ProfileComponent {
     } else {
       console.log('Formulario de cambio de contraseña inválido');
     }
+  }
+
+  getSettings() {
+    this.settingsService.getSettingById(1).subscribe((settings: any) => {
+      
+    });
   }
 }
