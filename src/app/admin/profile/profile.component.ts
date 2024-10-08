@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SettingsService } from '../../../services/modulos/administracion/settings/settings.service';
+import { SettingsService } from '@admin/settings.service';
 
 @Component({
   selector: 'app-profile',

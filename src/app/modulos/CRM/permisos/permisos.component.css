@@ -1,0 +1,24 @@
+.card {
+    border: none;
+    border-radius: 15px; /* Bordes redondeados en la tarjeta */
+}
+.table-container {
+    margin-top: 20px;
+}
+.table th {
+    background-color: #075722; /* Color de fondo para el encabezado */
+    color: white; /* Color de texto blanco */
+}
+.table td {
+    background-color: #ffffff; /* Fondo blanco para las celdas */
+}
+.table tr:hover {
+    background-color: #f1f1f1; /* Color al pasar el mouse sobre las filas */
+}
+h2 {
+    color: #074173; /* Color del título */
+}
+.description {
+    margin-bottom: 20px;
+    color: #555; /* Color de texto gris para la descripción */
+}

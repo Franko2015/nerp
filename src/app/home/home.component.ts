@@ -11,7 +11,7 @@ import { LoginComponent } from '../login/login.component';
 export class HomeComponent {
   banner: any = true;
 
-  btnLogin?: boolean;
+  btnLoginHome?: boolean;
 
 }
 

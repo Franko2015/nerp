@@ -57,11 +57,6 @@ export class ChartComponent {
       putOnlyUsedFonts: true
     });
 
-
-
-
-
-  
     // Agregar el título del reporte
     const fechaHoy = new Date().toLocaleDateString();
     const titulo = 'Reporte - (Fecha: ' + fechaHoy + ')';
@@ -71,32 +66,32 @@ export class ChartComponent {
     const posX = (pageWidth - tituloWidth) / 2;
     doc.setFontSize(fontSize);
     doc.text(titulo, posX, 10); // Posicionar el título
-  
+
     // Añadir la tabla de datos
     this.addTable(doc);
-  
+
     // Añadir el gráfico al PDF capturando el div que contiene el gráfico
     await this.addChart(doc);  // Espera a que se complete la generación de la imagen del gráfico
-  
+
     // Guardar el PDF después de añadir todo el contenido
     doc.save('Reporte.pdf');
   }
-  
+
   async addChart(doc: jsPDF) {
     const chartElement = document.getElementById('chartContainer'); // Asegúrate de que el ID coincida con el contenedor de la gráfica
-  
+
     if (chartElement) {
       // Usar html2canvas para capturar la gráfica
       const canvas = await html2canvas(chartElement);
       const imgData = canvas.toDataURL('image/png');
-  
+
       // Añadir la imagen al PDF
       const imgWidth = 180; // Ancho de la imagen en el PDF
       const imgHeight = canvas.height * imgWidth / canvas.width; // Mantener la proporción
       doc.addImage(imgData, 'PNG', 15, 40, imgWidth, imgHeight);
     }
   }
-  
+
   addTable(doc: jsPDF) {
     // Set up table data
     const headers = ['País', 'Año', 'Cantidad ($)'];

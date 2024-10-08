@@ -21,7 +21,23 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@services/*": ["services/*"],
+      "@admin/*": ["services/modulos/administracion/*"],
+      "@contabilidad/*": ["services/modulos/contabilidad/*"],
+      "@inventario/*": ["services/modulos/inventario/*"],
+      "@ventas/*": ["services/modulos/ventas/*"],
+      "@rrhh/*": ["services/modulos/rrhh/*"],
+      "@produccion/*": ["services/modulos/produccion/*"],
+      "@distribucion/*": ["services/modulos/distribucion/*"],
+      "@logistica/*": ["services/modulos/logistica/*"],
+      "@envios/*": ["services/modulos/envios/*"],
+      "@compras/*": ["services/modulos/compras/*"],
+      "@facturacion/*": ["services/modulos/facturacion/*"],
+      "@env/*": ["environment/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
